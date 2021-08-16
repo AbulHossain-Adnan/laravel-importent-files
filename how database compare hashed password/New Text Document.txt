@@ -1,0 +1,17 @@
+
+
+    1::When user tries to login and enters password how does Laravel compare this password to what is in database?
+
+
+
+
+It uses PHP's built-in password_verify() function.
+
+How does it work? Magic. No seriously, magic. On topics of cryptography, you will at some point be forced to choose between two possibilities:
+
+    Accept that it's magic, and get on with your life
+    Become a professional cryptographer
+
+Anyway, password_hash() returns different values each time because it appends a random string (a "salt") to the password. The salt is actually contained in the output hash.
+
+If the same password is hashed with the same salt, you will always get the same output. Therefore password_verify() looks at the stored hash, extracts the salt, and then hashes the given password with that same salt.
