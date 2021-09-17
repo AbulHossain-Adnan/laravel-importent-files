@@ -1,0 +1,114 @@
+##stack overflow::
+
+
+$(function() {
+
+  $("#newModalForm").validate({
+    rules: {
+      pName: {
+        required: true,
+        minlength: 8
+      },
+      action: "required"
+    },
+    messages: {
+      pName: {
+        required: "Please enter some data",
+        minlength: "Your data must be at least 8 characters"
+      },
+      action: "Please provide some data"
+    }
+  });
+});
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addMyModal">Open Modal</button>
+<div class="modal fade" id="addMyModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Stuff</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" id="newModalForm">
+          <div class="form-group">
+            <label class="control-label col-md-3" for="email">A p Name:</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter a p name" require/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3" for="email">Action:</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="action" name="action" placeholder="Enter and action" require>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" id="btnSaveIt">Save</button>
+            <button type="button" class="btn btn-default" id="btnCloseIt" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+###example uses::
+----------------
+1::first add validate cdn:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+2::form er moddhe id nite hobe and every input field a id thakbe segula dhore validate korte hobe;
+
+
+javascript//
+------------
+
+<script>
+
+  $('document').ready(function(){
+     $("#newModalForm").validate({
+        rules: {
+            meta_title: {
+                required: true,
+            },
+
+            meta_author: {
+                required: true,
+            },
+          
+              meta_tag: {
+                required: true,
+            },
+          
+              meta_description: {
+                required: true,
+            },
+          
+              google_analytics: {
+                required: true,
+            },
+           
+              bing_analyticst: {
+                required: true,
+            },
+             
+        },
+        messages: {
+            meta_title:"meta title field is required",
+             meta_author:"meta author field is required",
+             meta_tag:"meta tag field is required",
+             meta_description:"meta description field is required",
+             google_analytics:"google_analytics field is required",
+             bing_analyticst:"bing_analyticst field is required",
+            
+        }
+    });
+  })
+</script>
+
+
